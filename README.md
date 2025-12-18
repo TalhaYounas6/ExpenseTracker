@@ -1,6 +1,6 @@
 # Expense Tracker
 
-A simple MERN stack application to track personal expenses. Built as a 1-day task to demonstrate data modeling, API handling, and React state management.
+A simple MERN stack application to track personal expenses. Built as a 1-day task.
 
 ## Tech Stack
 * **Frontend:** React, Tailwind CSS, Axios, React Icons
