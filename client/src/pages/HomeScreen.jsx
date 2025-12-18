@@ -20,8 +20,13 @@ const HomeScreen = () => {
         try {
             setLoading(true);
             const res = await axiosInstance.get("/get-expenses")
+
+            if(res.data.success){
             setExpenses(res.data.data);
-            
+            }
+            else{
+                toast.error("Failed to retrieve expenses");
+            }
         } catch (error) {
             console.log("Error fetching data:",error);
             toast.error("Failed to retrieve expenses");
@@ -142,7 +147,7 @@ const HomeScreen = () => {
             />
             <button 
                 type="submit" 
-                className="mt-2 w-full bg-black text-white py-3 rounded font-medium hover:bg-gray-800 transition-colors flex justify-center items-center gap-2"
+                className=" cursor-pointer mt-2 w-full bg-black text-white py-3 rounded font-medium hover:bg-gray-800 transition-colors flex justify-center items-center gap-2"
             >
                 <FaPlus size={12}/>
             </button>
@@ -186,9 +191,9 @@ const HomeScreen = () => {
                             <span className="font-semibold text-gray-900">${item.amount}</span>
                             <button 
                                 onClick={() => handleDelete(item._id)}
-                                className="text-gray-300 hover:text-red-500 transition-colors"
+                                className="text-gray-300 hover:text-red-500 transition-colors cursor-pointer"
                             >
-                                <FaTrash size={14} />
+                                <FaTrash size={14}  />
                             </button>
                         </div>
                     </div>
