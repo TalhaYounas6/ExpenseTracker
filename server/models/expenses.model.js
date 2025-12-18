@@ -1,6 +1,12 @@
 import mongoose from "mongoose";
 
 const expensesSchema = new mongoose.Schema({
+    title :{
+        type: String,
+        required: true,
+        maxLength: 20,
+        trim: true
+    },
     amount: {
         type: Number,
         required: true,
@@ -19,7 +25,7 @@ const expensesSchema = new mongoose.Schema({
     },
     description: {
         type: String,
-        required: true,
+        required: false,
         maxLength: 20,
         trim: true
     },
