@@ -55,7 +55,8 @@ const HomeScreen = () => {
             toast.success("Expenses added successfully")
         } catch (error) {
             console.log("Error in submission: ",error);
-            toast.error("Failure in adding expense")
+            toast.error("Failure in adding expense");
+            toast.error(error.response.data.message);
         }
         
     };
@@ -179,10 +180,10 @@ const HomeScreen = () => {
                                 <span>•</span>
                                 <span>{new Date(item.date).toLocaleDateString()}</span>
                                 {item.description && (
-                                                    <>
-                                                        <span>•</span>
-                                                        <span className="italic truncate max-w-[150px]">{item.description}</span>
-                                                    </>
+                                    <>
+                                         <span>•</span>
+                                         <span className="italic truncate max-w-[150px]">{item.description}</span>
+                                    </>
                                 )}
                             </div>
                         </div>
