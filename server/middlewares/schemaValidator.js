@@ -8,7 +8,7 @@ return (req,res,next)=>{
     if(error){
         return res.status(STATUS_CODES.REQUIRED).json({
             statusCode: STATUS_CODES.REQUIRED,
-            message : error.details[0].message,
+            message : error.details[0].message.replace(/"/g, ''),
         })
     }
 

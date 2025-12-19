@@ -2,13 +2,14 @@ import "dotenv/config";
 import app from "./app.js";
 import http from "http";
 import { connectDB } from "./config/db.js";
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
 
 
 const port = process.env.PORT || 3000;
-const module = require.main;
-if (require.main === module) {
+
+if (process.argv[1] === __filename) {
   const server = http.Server(app);
 
   const startServer = async () => {

@@ -26,7 +26,7 @@ const expensesSchema = new mongoose.Schema({
     description: {
         type: String,
         required: false,
-        maxLength: 20,
+        maxLength: 100,
         trim: true
     },
 },{timestamps : true})
