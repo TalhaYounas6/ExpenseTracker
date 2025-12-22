@@ -15,7 +15,7 @@ if (process.argv[1] === __filename) {
   const startServer = async () => {
     try {
       await connectDB();
-      console.log('Connection to MongoDb has been established successfully.');
+      
 
       server.listen(port, () => {
         console.log(`App is listening on port ${port}`);
